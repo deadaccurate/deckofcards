@@ -3,7 +3,7 @@ package jdeck;
 import jdeck.Card;
 import jdeck.Suit;
 import jdeck.FaceValue;
-import java.util.Random;
+import java.security.SecureRandom;
 
 /**
  * This class defines a deck of cards. It creates 52 cards using an array.
@@ -95,7 +95,8 @@ public class Deck
      */
     public void shuffle()
     {
-        Random ranGen = new Random();
+        // Larger seed, so more possible permutations of the deck
+        SecureRandom ranGen = new SecureRandom();
         for (int i = size - 1; i >= 1; --i)
         {
             // i + 1 because nextInt() upper bound is exclusive and I want to
