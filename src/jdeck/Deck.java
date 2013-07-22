@@ -127,4 +127,12 @@ public class Deck
 
         return retCard;
     }
+    
+    /**
+     * This method is used to retrieve the current size of the deck.
+     */
+    public int getSize()
+    {
+        return size;
+    }
 }
