@@ -34,9 +34,15 @@ public final class FaceValue
      */
     public @Override String toString()
     {
-        return "Name: " + description + "\nValue: " + value;
+        return "Name: " + description + " Value: " + value;
     }
     
+    /**
+     * This method overrides the default hashCode() method. It computes a unique
+     * value for this object given the current description and value fields.
+     * 
+     * @return an int representing the hash code value of this instance
+     */
     @Override
     public int hashCode()
     {
@@ -48,6 +54,14 @@ public final class FaceValue
         return result;
     }
 
+    /**
+     * This method overrides the default equals method. It allows two different
+     * instantiated FaceValue objects to be the same if their fields contain the
+     * same data.
+     * 
+     * @param obj is a FaceValue object
+     * @return true if the objects are equal and false if not
+     */
     @Override
     public boolean equals(Object obj)
     {

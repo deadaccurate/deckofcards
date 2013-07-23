@@ -34,9 +34,10 @@ public final class Card
      * 
      * @return a String representation of the card
      */
-    public @Override String toString()
+    @Override
+    public String toString()
     {
-        return "SUIT\n" + suit + "\nVALUE\n" + value;
+        return "Suit: " + suit + "\nValue: " + value;
     }
     
     /**

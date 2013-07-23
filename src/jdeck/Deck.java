@@ -60,12 +60,18 @@ public class Deck
     // left.
     private int size;
     
+    // Larger seed, so more possible permutations of the deck
+    // This variable will be used to generate random numbers for shuffling the
+    // deck
+    SecureRandom ranGen;
+    
     /**
      * Default constructor to initialize the deck with 52 cards. The deck will
      * contain 13 cards of each suit.
      */
     public Deck()
     {
+        ranGen = new SecureRandom();
         size = SUITS.length * FACE_VALUES.length;
         cards = new Card[size];
         
@@ -95,8 +101,6 @@ public class Deck
      */
     public void shuffle()
     {
-        // Larger seed, so more possible permutations of the deck
-        SecureRandom ranGen = new SecureRandom();
         for (int i = size - 1; i >= 1; --i)
         {
             // i + 1 because nextInt() upper bound is exclusive and I want to

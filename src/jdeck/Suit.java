@@ -31,9 +31,10 @@ public final class Suit
      * 
      * @return a String containing the object's color and name
      */
-    public @Override String toString()
+    @Override
+    public String toString()
     {
-        return "Color: " + color + "\nName: " + name;
+        return "Color: " + color + " Name: " + name;
     }
     
     /**
