@@ -4,7 +4,9 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 
 public class DeckBuilderTest {
 
@@ -43,9 +45,16 @@ public class DeckBuilderTest {
 
     @Test
     public void testAddSuitsFaceValues() {
-        CardBuilder cardBuilder = new
-        DeckBuilder builder = new DeckBuilder()
-        Deck<Card> deck = builder.addSuitsAndFaceValues();
+        CardBuilder cardBuilder = new AceBuilder(true);
+        DeckBuilder builder = new DeckBuilder(cardBuilder);
+        List<Suit> suitList = new ArrayList<>();
+        suitList.add(Suit.Spades);
+
+        List<FaceValue> faceValues = new ArrayList<>();
+        faceValues.add(FaceValue.Ace);
+        faceValues.add(FaceValue.Seven);
+        builder.addSuitsAndFaceValues(suitList, faceValues);
+        Deck<Card> deck = builder.buildDeck();
         Assert.assertEquals(deck.size(), 0);
     }
 }
