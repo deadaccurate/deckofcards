@@ -18,3 +18,6 @@ For better testability, the StandardDeck class takes a NumberGenerator
 to allow shuffle's functionality to be predictable.
 
 The shuffle and dealOneCard methods are implemented in [StandardDeck](https://github.com/deadaccurate/deckofcards/blob/master/src/main/java/com/deadaccurate/StandardDeck.java).
+
+## To Use
+I used Intellij IDE to develop the project and was able to include it in another project by adding it as a module.
