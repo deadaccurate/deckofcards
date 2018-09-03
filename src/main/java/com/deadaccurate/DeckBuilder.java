@@ -11,14 +11,17 @@ import java.util.List;
 public class DeckBuilder {
     private List<SuitFaceValueLists> suitsFaceValues = new ArrayList<>();
     private CardBuilder cardBuilder;
+    private NumberGenerator generator;
 
     /**
      * Initialize the deck builder with a specific card builder. The card builder determines how to build
      * individual cards.
      * @param cardBuilder a CardBuilder to determine how to build each individual card.
+     * @param generator a number generator to use for building the deck of cards.
      */
-    public DeckBuilder(CardBuilder cardBuilder) {
+    public DeckBuilder(CardBuilder cardBuilder, NumberGenerator generator) {
         this.cardBuilder = cardBuilder;
+        this.generator = generator;
     }
 
     /**
@@ -46,8 +49,9 @@ public class DeckBuilder {
                 }
             }
         }
-        // TODO return a deck of cards
-        return null;
+        Card[] cardArr = new Card[cards.size()];
+        cards.toArray(cardArr);
+        return new StandardDeck<>(cardArr, this.generator);
     }
 
     /**

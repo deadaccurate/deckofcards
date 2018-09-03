@@ -1,7 +1,5 @@
 package com.deadaccurate;
 
-import java.util.Objects;
-
 /**
  * Card defines the fields of an individual card. A card contains a suit and face value.
  */

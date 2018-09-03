@@ -1,7 +1,8 @@
 package com.deadaccurate;
 
-import org.junit.Assert;
 import org.junit.Test;
+
+import static org.junit.Assert.*;
 
 /**
  * CardTest contains tests for the Card class.
@@ -13,8 +14,8 @@ public class CardTest {
      */
     @Test
     public void testGetValue() {
-        Assert.assertEquals(new Card(Suit.Hearts, FaceValue.Ace).getValue(), FaceValue.Ace.getValue());
-        Assert.assertEquals(new Card(Suit.Diamonds, FaceValue.King).getValue(), FaceValue.King.getValue());
+        assertEquals(new Card(Suit.Hearts, FaceValue.Ace).getValue(), FaceValue.Ace.getValue());
+        assertEquals(new Card(Suit.Diamonds, FaceValue.King).getValue(), FaceValue.King.getValue());
     }
 
     /**
@@ -22,8 +23,8 @@ public class CardTest {
      */
     @Test
     public void testGetFaceValue() {
-        Assert.assertEquals(new Card(Suit.Clubs, FaceValue.Two).getFaceValue(), FaceValue.Two);
-        Assert.assertEquals(new Card(Suit.Diamonds, FaceValue.Seven).getFaceValue(), FaceValue.Seven);
+        assertEquals(new Card(Suit.Clubs, FaceValue.Two).getFaceValue(), FaceValue.Two);
+        assertEquals(new Card(Suit.Diamonds, FaceValue.Seven).getFaceValue(), FaceValue.Seven);
     }
 
     /**
@@ -31,8 +32,8 @@ public class CardTest {
      */
     @Test
     public void testGetSuit() {
-        Assert.assertEquals(new Card(Suit.Spades, FaceValue.Three).getSuit(), Suit.Spades);
-        Assert.assertEquals(new Card(Suit.Hearts, FaceValue.Six).getSuit(), Suit.Hearts);
+        assertEquals(new Card(Suit.Spades, FaceValue.Three).getSuit(), Suit.Spades);
+        assertEquals(new Card(Suit.Hearts, FaceValue.Six).getSuit(), Suit.Hearts);
     }
 
     /**
@@ -43,14 +44,14 @@ public class CardTest {
         Card spQueen = new Card(Suit.Spades, FaceValue.Queen);
         Card spQueen2 = new Card(Suit.Spades, FaceValue.Queen);
         // Reflexive
-        Assert.assertEquals(spQueen, spQueen);
+        assertEquals(spQueen, spQueen);
         // Symmetric
-        Assert.assertEquals(spQueen, spQueen2);
-        Assert.assertEquals(spQueen2, spQueen);
+        assertEquals(spQueen, spQueen2);
+        assertEquals(spQueen2, spQueen);
         // Transitive
         Card spQueen3 = new Card(Suit.Spades, FaceValue.Queen);
-        Assert.assertEquals(spQueen, spQueen3);
-        Assert.assertEquals(spQueen3, spQueen2);
+        assertEquals(spQueen, spQueen3);
+        assertEquals(spQueen3, spQueen2);
     }
 
     /**
@@ -65,14 +66,14 @@ public class CardTest {
         Card spFive = new Card(Suit.Spades, FaceValue.Five);
 
         // Suit and FaceValue are different
-        Assert.assertNotEquals(heartJack, clubEight);
+        assertNotEquals(heartJack, clubEight);
         // Null
-        Assert.assertNotEquals(heartJack, null);
+        assertNotEquals(heartJack, null);
         // Suits are the same
-        Assert.assertNotEquals(heartJack, heartThree);
+        assertNotEquals(heartJack, heartThree);
         // Two different classes
-        Assert.assertNotEquals(clubEight, FaceValue.Jack);
-        Assert.assertNotEquals(spNull, spFive);
+        assertNotEquals(clubEight, FaceValue.Jack);
+        assertNotEquals(spNull, spFive);
     }
 
     /**
@@ -82,9 +83,9 @@ public class CardTest {
     public void testHashCode() {
         Card diamondSeven = new Card(Suit.Diamonds, FaceValue.Seven);
         Card diamondSeven2 = new Card(Suit.Diamonds, FaceValue.Seven);
-        Assert.assertEquals(diamondSeven.hashCode(), diamondSeven2.hashCode());
+        assertEquals(diamondSeven.hashCode(), diamondSeven2.hashCode());
         Card clubKing = new Card(Suit.Clubs, FaceValue.King);
-        Assert.assertNotEquals(clubKing.hashCode(), diamondSeven.hashCode());
-        Assert.assertEquals(new Card(null, null).hashCode(), new Card(null, null).hashCode());
+        assertNotEquals(clubKing.hashCode(), diamondSeven.hashCode());
+        assertEquals(new Card(null, null).hashCode(), new Card(null, null).hashCode());
     }
 }

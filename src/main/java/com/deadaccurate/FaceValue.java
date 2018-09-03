@@ -1,5 +1,8 @@
 package com.deadaccurate;
 
+/**
+ * This class represents the possible face values of a card.
+ */
 public enum FaceValue {
     Ace(1, "Ace"),
     Two(2, "Two"),

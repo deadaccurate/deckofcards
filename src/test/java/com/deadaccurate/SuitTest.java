@@ -1,7 +1,8 @@
 package com.deadaccurate;
 
-import org.junit.Assert;
 import org.junit.Test;
+
+import static org.junit.Assert.*;
 
 /**
  * SuitTest contains tests for the Suit class.
@@ -13,10 +14,10 @@ public class SuitTest {
      */
     @Test
     public void testGetSuitColor() {
-        Assert.assertEquals(Suit.Hearts.getColor(), Color.Red);
-        Assert.assertEquals(Suit.Spades.getColor(), Color.Black);
-        Assert.assertEquals(Suit.Clubs.getColor(), Color.Black);
-        Assert.assertEquals(Suit.Diamonds.getColor(), Color.Red);
+        assertEquals(Suit.Hearts.getColor(), Color.Red);
+        assertEquals(Suit.Spades.getColor(), Color.Black);
+        assertEquals(Suit.Clubs.getColor(), Color.Black);
+        assertEquals(Suit.Diamonds.getColor(), Color.Red);
     }
 
     /**
@@ -24,10 +25,10 @@ public class SuitTest {
      */
     @Test
     public void testGetName() {
-        Assert.assertEquals(Suit.Hearts.getName(), "Hearts");
-        Assert.assertEquals(Suit.Spades.getName(), "Spades");
-        Assert.assertEquals(Suit.Clubs.getName(), "Clubs");
-        Assert.assertEquals(Suit.Diamonds.getName(), "Diamonds");
+        assertEquals(Suit.Hearts.getName(), "Hearts");
+        assertEquals(Suit.Spades.getName(), "Spades");
+        assertEquals(Suit.Clubs.getName(), "Clubs");
+        assertEquals(Suit.Diamonds.getName(), "Diamonds");
     }
 
     /**
@@ -36,13 +37,13 @@ public class SuitTest {
     @Test
     public void testToString() {
         String formatTemplate = "Suit: name: %1$s color: %2$s";
-        Assert.assertEquals(Suit.Hearts.toString(),
+        assertEquals(Suit.Hearts.toString(),
                 String.format(formatTemplate, "Hearts", Color.Red.getName()));
-        Assert.assertEquals(Suit.Spades.toString(),
+        assertEquals(Suit.Spades.toString(),
                 String.format(formatTemplate, "Spades", Color.Black.getName()));
-        Assert.assertEquals(Suit.Clubs.toString(),
+        assertEquals(Suit.Clubs.toString(),
                 String.format(formatTemplate, "Clubs", Color.Black.getName()));
-        Assert.assertEquals(Suit.Diamonds.toString(),
+        assertEquals(Suit.Diamonds.toString(),
                 String.format(formatTemplate, "Diamonds", Color.Red.getName()));
     }
 }

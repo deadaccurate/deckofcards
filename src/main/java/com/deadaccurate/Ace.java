@@ -22,7 +22,8 @@ public class Ace extends Card {
      */
     @Override
     public int getValue() {
-        return isLow ? 1 : 11;
+        // high is greater than a King
+        return isLow ? 1 : 14;
     }
 
     /**

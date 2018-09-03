@@ -1,7 +1,8 @@
 package com.deadaccurate;
 
-import org.junit.Assert;
 import org.junit.Test;
+
+import static org.junit.Assert.*;
 
 /**
  * ColorTest contains tests for the Color enum class.
@@ -12,7 +13,7 @@ public class ColorTest {
      */
     @Test
     public void testGetName() {
-        Assert.assertEquals(Color.Red.getName(), "Red");
-        Assert.assertEquals(Color.Black.getName(), "Black");
+        assertEquals(Color.Red.getName(), "Red");
+        assertEquals(Color.Black.getName(), "Black");
     }
 }
